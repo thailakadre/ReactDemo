@@ -1,0 +1,11 @@
+@import '~office-ui-fabric-react/dist/sass/_References.scss';
+
+.reactWebPartDemo {
+  .titleDiv {
+    @include ms-font-xl;
+    text-align: center;
+  }
+}
+
+
+

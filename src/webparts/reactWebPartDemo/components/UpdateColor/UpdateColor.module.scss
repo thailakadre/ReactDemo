@@ -1,0 +1,27 @@
+@import '~office-ui-fabric-react/dist/sass/_References.scss';
+
+.updateColor {
+    margin-top: 20px;
+
+    .container {
+        @include ms-Grid;
+      }
+    
+      .row {
+        @include ms-Grid-row;
+      }
+    
+      .columnTextField {
+        @include ms-Grid-col;
+        @include ms-md10;
+        @include ms-sm8;
+      }
+    
+      .columnButton {
+        @include ms-Grid-col;
+        @include ms-md2;
+        @include ms-sm4;
+        margin-top: 28px;
+      }
+
+}

@@ -1,0 +1,18 @@
+@import '~office-ui-fabric-react/dist/sass/_References.scss';
+
+.colorList {
+
+  .container {
+    width: 200px;
+    height: 185px;
+    float: left;
+    margin: 10px;
+    border: black solid 1px;
+  }
+
+  .title{
+    text-align: center;
+    font-size: 20px;
+    margin-top: 15px;
+  }
+}
