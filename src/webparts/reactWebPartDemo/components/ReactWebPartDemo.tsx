@@ -26,7 +26,7 @@ export default class ReactWebPartDemo extends React.Component<IReactWebPartDemoP
     return (
       <div className={styles.reactWebPartDemo}>
         <div className={styles.titleDiv}><span>CRUD Demo with SharePoint + React!</span></div>
-        <AddColor onAddColor={this._addColor} currentSiteUrl={this.props.currentSiteUrl} spHttpClient={this.props.spHttpClient} />
+        <AddColor onAddColor={this._addColor} colorListService={this.colorListService} />
         <hr/>
         <ColorList colors={this.state.colors} onRemoveColor={this._removeColor} onUpdateColor={this._updateColor} currentSiteUrl={this.props.currentSiteUrl} spHttpClient={this.props.spHttpClient} />
       </div>

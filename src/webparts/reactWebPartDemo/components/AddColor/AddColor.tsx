@@ -9,7 +9,7 @@ import { IColorListService } from "../../../../Services/IColorListService";
 import { ColorListService } from "../../../../Services/ColorListService";
 
 export class AddColor extends React.Component<IAddColorProps, IAddColorState> {
-    private colorListService: IColorListService;
+   // private colorListService: IColorListService;
 
     constructor(props: IAddColorProps) {
         super(props);
@@ -17,7 +17,7 @@ export class AddColor extends React.Component<IAddColorProps, IAddColorState> {
 
         this._onTextFieldChange = this._onTextFieldChange.bind(this);
         this._onKeyPress = this._onKeyPress.bind(this);
-        this.colorListService = new ColorListService(this.props.spHttpClient, this.props.currentSiteUrl);
+        //this.colorListService = new ColorListService(this.props.spHttpClient, this.props.currentSiteUrl);
     }
 
     public render(): React.ReactElement<IAddColorProps> {
@@ -51,7 +51,7 @@ export class AddColor extends React.Component<IAddColorProps, IAddColorState> {
 
     private _onButtonClick(): void {
         if (this.state.colorName != '') {
-            this.colorListService.hasColor(this.state.colorName)
+            this.props.colorListService.hasColor(this.state.colorName)
                 .then((hasColor: Boolean) => {
                     if (!hasColor) {
                         this.props.onAddColor(this.state.colorName);
