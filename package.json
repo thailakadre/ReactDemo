@@ -16,6 +16,8 @@
     "@microsoft/sp-lodash-subset": "1.11.0",
     "@microsoft/sp-property-pane": "1.11.0",
     "@microsoft/sp-webpart-base": "1.11.0",
+    "@pnp/graph": "^2.1.0",
+    "@pnp/sp": "^2.1.0",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.5",
     "office-ui-fabric-react": "6.214.0",

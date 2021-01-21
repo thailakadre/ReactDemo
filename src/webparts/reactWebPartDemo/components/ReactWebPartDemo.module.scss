@@ -2,7 +2,9 @@
 
 .reactWebPartDemo {
   .titleDiv {
-    @include ms-font-xl;
+    // @include ms-font-42;
+    // @include ms-fontColor-themePrimary;
+    // @include ms-borderColor-themePrimary;
     text-align: center;
   }
 }

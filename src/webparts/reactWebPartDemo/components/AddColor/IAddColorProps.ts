@@ -1,11 +1,8 @@
-import { IColorListService } from "../../../../Services/IColorListService";
+import { IColorService } from "../../../../Services/IColorService";
 
 export type AddColorCallback = (colorName: string) => void;
 
 export interface IAddColorProps {
     onAddColor: AddColorCallback;
-    // currentSiteUrl: any;
-    // spHttpClient: SPHttpClient;
-    colorListService: IColorListService;
-
+    colorListService: IColorService;
 }

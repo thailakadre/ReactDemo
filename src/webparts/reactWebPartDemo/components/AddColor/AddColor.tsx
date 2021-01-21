@@ -5,11 +5,8 @@ import { TextField } from 'office-ui-fabric-react/lib/TextField';
 import { PrimaryButton } from 'office-ui-fabric-react/lib/Button';
 import { MessageBar, MessageBarType } from 'office-ui-fabric-react/lib/MessageBar';
 import styles from "./AddColor.module.scss";
-import { IColorListService } from "../../../../Services/IColorListService";
-import { ColorListService } from "../../../../Services/ColorListService";
 
 export class AddColor extends React.Component<IAddColorProps, IAddColorState> {
-   // private colorListService: IColorListService;
 
     constructor(props: IAddColorProps) {
         super(props);
@@ -17,7 +14,6 @@ export class AddColor extends React.Component<IAddColorProps, IAddColorState> {
 
         this._onTextFieldChange = this._onTextFieldChange.bind(this);
         this._onKeyPress = this._onKeyPress.bind(this);
-        //this.colorListService = new ColorListService(this.props.spHttpClient, this.props.currentSiteUrl);
     }
 
     public render(): React.ReactElement<IAddColorProps> {

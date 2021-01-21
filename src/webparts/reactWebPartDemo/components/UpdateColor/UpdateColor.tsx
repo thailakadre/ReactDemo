@@ -6,11 +6,8 @@ import { TextField } from "office-ui-fabric-react/lib/TextField";
 import { ActionButton } from "office-ui-fabric-react/lib/Button";
 import styles from "./UpdateColor.module.scss";
 import { MessageBar, MessageBarType } from "office-ui-fabric-react/lib/MessageBar";
-import { IColorListService } from "../../../../Services/IColorListService";
-import { ColorListService } from "../../../../Services/ColorListService";
 
 export class UpdateColor extends React.Component<IUpdateColorProps, IUpdateColorState>{
-    private colorListService: IColorListService;
     
     private UpdateIcon: IIconProps =
         {
@@ -29,7 +26,6 @@ export class UpdateColor extends React.Component<IUpdateColorProps, IUpdateColor
     constructor(props: IUpdateColorProps) {
         super(props);
         this.state = { newColorName: '', isEmpty: false, isError: false };
-        this.colorListService = new ColorListService(this.props.spHttpClient, this.props.currentSiteUrl);
 
         this._onTextFieldChange = this._onTextFieldChange.bind(this);
         this._onKeyPress = this._onKeyPress.bind(this);
@@ -62,7 +58,7 @@ export class UpdateColor extends React.Component<IUpdateColorProps, IUpdateColor
 
     private _onButtonClick(): void {
         if (this.state.newColorName != '') {
-            this.colorListService.hasColor(this.state.newColorName)
+            this.props.colorService.hasColor(this.state.newColorName)
                 .then((hasColor: Boolean) => {
                     if (!hasColor) {
                         let color = this.props.color;

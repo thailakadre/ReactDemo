@@ -7,15 +7,14 @@ import * as Adapter from 'enzyme-adapter-react-16';
 import { IAddColorProps } from '../components/AddColor/IAddColorProps';
 import { IAddColorState } from '../components/AddColor/IAddColorState';
 import { AddColor } from '../components/AddColor/AddColor';
-import { IColorListService } from '../../../Services/IColorListService';
-import { ColorListServiceMock } from '../../../Services/ColorListServiceMock';
+import { ColorServiceMock } from '../../../Services/ColorServiceMock';
 
 configure({ adapter: new Adapter() });
 
 
 describe("<ReactWebPartDemo /> Test Suite", () => {
     let componentWrapper: ReactWrapper<IAddColorProps, IAddColorState>;
-    let colorListService: ColorListServiceMock;
+    let colorListService: ColorServiceMock;
 
     beforeEach(() => {
         componentWrapper = mount(React.createElement(AddColor, {

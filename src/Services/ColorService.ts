@@ -1,16 +1,16 @@
-import { IColorListService } from "./IColorListService";
+import { IColorService } from "./IColorService";
 import { IColor } from "../Interfaces/IColor";
-import { SPHttpClient, SPHttpClientResponse } from "@microsoft/sp-http";
+import { SPHttpClient } from "@microsoft/sp-http";
 import { ListBase } from "./ListBase";
 
-export class ColorListService extends ListBase<IColor> implements IColorListService {
+export class ColorService extends ListBase<IColor> implements IColorService {
 
   constructor(spHttpClient: SPHttpClient, currentSiteUrl: string) {
     super(spHttpClient, currentSiteUrl, 'Colors', ['Id', 'Title']);
   }
 
   public getColors(): Promise<IColor[]> {
-    return new Promise<IColor[]>((resolve, reject) => {
+    return new Promise<IColor[]>((resolve) => {
       this.getItems()
         .then((result: IColor[]) => {
           resolve(result);
@@ -21,7 +21,7 @@ export class ColorListService extends ListBase<IColor> implements IColorListServ
   }
 
   public addColor(colorName: string): Promise<IColor> {
-    return new Promise<IColor>((resolve, reject) => {
+    return new Promise<IColor>((resolve) => {
       this.addItem({ Title: colorName, Id: 0 })
         .then((result: IColor) => {
           resolve(result);
@@ -33,7 +33,7 @@ export class ColorListService extends ListBase<IColor> implements IColorListServ
   }
 
   public updateColor(color: IColor): Promise<boolean> {
-    return new Promise<boolean>((resolve, reject) => {
+    return new Promise<boolean>((resolve) => {
       this.getItem(color.Id)
         .then((oldColor: IColor) => {
           oldColor.Title = color.Title;
@@ -51,7 +51,7 @@ export class ColorListService extends ListBase<IColor> implements IColorListServ
   }
 
   public hasColor(colorName: string): Promise<boolean> {
-    return new Promise<boolean>((resolve, reject) => {
+    return new Promise<boolean>((resolve) => {
       this.getItemByName(colorName)
         .then((color: IColor) => {
           if(color != undefined && color.Title.toLowerCase() === colorName.toLowerCase())

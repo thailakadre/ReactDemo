@@ -18,7 +18,7 @@ export class ColorList extends React.Component<IColorListProps, {}> {
                     return (
                         <div className={styles.container} style={{backgroundColor:color.Title}}>
                             <div className={styles.title}>{color.Title}</div>
-                            <UpdateColor color={color} onUpdateColor={(updateColor) => this._onUpdateClick(updateColor)} currentSiteUrl={this.props.currentSiteUrl} spHttpClient={this.props.spHttpClient} />
+                            <UpdateColor color={color} onUpdateColor={(updateColor) => this._onUpdateClick(updateColor)}  colorService={this.props.colorService} />
                             <DeleteColor color={color} onRemoveColor={() => this._onDeleteClick(color)}></DeleteColor>
                         </div>
                     );

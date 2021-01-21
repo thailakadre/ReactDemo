@@ -1,7 +1,7 @@
 import { SPHttpClient } from '@microsoft/sp-http';
+import { IColorService } from '../../../Services/IColorService';
 
 export interface IReactWebPartDemoProps {
   description: string;
-  spHttpClient: SPHttpClient;
-  currentSiteUrl: string;
+  colorService: IColorService;
 }

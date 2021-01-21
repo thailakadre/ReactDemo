@@ -1,6 +1,6 @@
 import { IColor } from "../Interfaces/IColor";
 
-export interface IColorListService {
+export interface IColorService {
 
     getColors(): Promise<IColor[]>;
     addColor(colorName: string): Promise<IColor>;
